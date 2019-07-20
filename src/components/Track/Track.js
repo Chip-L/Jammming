@@ -5,6 +5,8 @@ import './Track.css';
 export class Track extends React.Component {
   constructor(props) {
     super(props);
+
+    this.renderAction = this.renderAction.bind(this);
   }
 
   renderAction() {
@@ -19,11 +21,13 @@ export class Track extends React.Component {
     return (
       <div className="Track">
         <div className="Track-information">
-          <h3> track name will go here </h3>
-          <p> track artist will go here | track album will go here </p>
+          <h3> {this.props.trackInfo.name} </h3>
+          <p> {this.props.trackInfo.artist} | {this.props.trackInfo.album} </p>
         </div>
-        <button className="Track-action">{renderAction}</button>
+        <button className="Track-action" >{this.renderAction}</button>
       </div>
     );
   }
 };
+/*
+*/
