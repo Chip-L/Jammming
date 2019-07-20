@@ -4,9 +4,15 @@ import {Track} from '../Track/Track';
 import './TrackList.css';
 
 export class TrackList extends React.Component {
-  /*constructor() {
+  constructor(props) {
+    super(props);
 
-  }*/
+    this.addTrack=this.addTrack.bind(this);
+  }
+
+  addTrack(e) {
+    this.props.onAdd(this.props.track);
+  }
 
   render() {
 
@@ -14,7 +20,12 @@ export class TrackList extends React.Component {
     if(this.props.tracklist) {
       listOfTracks = this.props.tracklist.map((track) => {
         return(
-          <Track key={track.id} trackInfo={track} />
+          <Track
+            key={track.id}
+            trackInfo={track}
+            onAdd={this.props.onAdd}
+            isRemoval={this.props.isRemoval}
+          />
         );
       });
     };
