@@ -9,14 +9,26 @@ import './App.css';
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {searchResults: [{name: 'Material Girl',
-                                  artist: 'Madonna',
-                                  album: 'Like a Virgin',
-                                  id: 1},
-                                  {name: 'Like a Virgin',
-                                   artist: 'Madonna',
-                                   album: 'Like a Virgin',
-                                   id: 2}]};
+    this.state= {
+      playListName: 'Chip\'s Play List',
+      playListTracks: [{name: 'Material Girl',
+                        artist: 'Madonna',
+                        album: 'Like a Virgin',
+                        id: 1},
+                       {name: 'Like a Virgin',
+                        artist: 'Madonna',
+                        album: 'Like a Virgin',
+                        id: 2}],
+      searchResults: [{name: 'Material Girl',
+                       artist: 'Madonna',
+                       album: 'Like a Virgin',
+                       id: 1},
+                      {name: 'Like a Virgin',
+                       artist: 'Madonna',
+                       album: 'Like a Virgin',
+                       id: 2}],
+
+    };
   }
 
   render() {
@@ -27,7 +39,7 @@ export class App extends React.Component {
           <SearchBar /  >
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} />
-            <Playlist />
+            <Playlist playListName={this.state.playListName} playListTracks={this.state.playListTracks}/>
           </div>
         </div>
       </div>
