@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Jammming/static/css/main.2cce8147.chunk.css",
-    "main.js": "/Jammming/static/js/main.5ed7f43b.chunk.js",
-    "main.js.map": "/Jammming/static/js/main.5ed7f43b.chunk.js.map",
+    "main.css": "/Jammming/static/css/main.5d1a9d88.chunk.css",
+    "main.js": "/Jammming/static/js/main.7d336c4c.chunk.js",
+    "main.js.map": "/Jammming/static/js/main.7d336c4c.chunk.js.map",
     "runtime~main.js": "/Jammming/static/js/runtime~main.23f8de95.js",
     "runtime~main.js.map": "/Jammming/static/js/runtime~main.23f8de95.js.map",
-    "static/js/2.b41502e9.chunk.js": "/Jammming/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/Jammming/static/js/2.b41502e9.chunk.js.map",
+    "static/js/2.d6a534e5.chunk.js": "/Jammming/static/js/2.d6a534e5.chunk.js",
+    "static/js/2.d6a534e5.chunk.js.map": "/Jammming/static/js/2.d6a534e5.chunk.js.map",
     "index.html": "/Jammming/index.html",
-    "precache-manifest.37442133718feb5db2fa478cdcc6cf29.js": "/Jammming/precache-manifest.37442133718feb5db2fa478cdcc6cf29.js",
+    "precache-manifest.8c1b179ad16457487237817576762791.js": "/Jammming/precache-manifest.8c1b179ad16457487237817576762791.js",
     "service-worker.js": "/Jammming/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/Jammming/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/Jammming/static/media/logo.5d5d9eef.svg"
+    "static/css/main.5d1a9d88.chunk.css.map": "/Jammming/static/css/main.5d1a9d88.chunk.css.map",
+    "static/media/App.css": "/Jammming/static/media/background_photo_desktop.37be7357.jpg"
   }
 }
