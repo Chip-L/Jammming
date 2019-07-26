@@ -14,25 +14,34 @@ export class App extends React.Component {
       playListTracks: [{name: 'Material Girl',
                         artist: 'Madonna',
                         album: 'Like a Virgin',
-                        id: 1},
+                        id: 1,
+                        uri: '123a1'
+                       },
                        {name: 'Like a Virgin',
                         artist: 'Madonna',
                         album: 'Like a Virgin',
-                        id: 2}],
+                        id: 2,
+                        uri: '123a2'
+                      }],
       searchResults: [{name: 'Material Girl 3',
                        artist: 'Madonna',
                        album: 'Like a Virgin',
-                       id: 3},
+                       id: 3,
+                       uri: '123a3'
+                      },
                       {name: 'Like a Virgin 4',
                        artist: 'Madonna',
                        album: 'Like a Virgin',
-                       id: 4}],
+                       id: 4,
+                       uri: '123a4'
+                     }],
 
     };
 
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack =  this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    this.savePlaylist = this.savePlaylist.bind(this);
   }
 
   addTrack(track) {
@@ -55,6 +64,11 @@ export class App extends React.Component {
     this.setState({playListName: name});
   }
 
+  savePlaylist() {
+    let trackURIs = this.state.playListTracks.map(track => track.uri);
+    console.log(trackURIs);
+  }
+
   render() {
     return (
       <div>
@@ -71,6 +85,7 @@ export class App extends React.Component {
               playListTracks={this.state.playListTracks}
               onRemove={this.removeTrack}
               onNameChange={this.updatePlaylistName}
+              onSave={this.savePlaylist}
             />
           </div>
         </div>
