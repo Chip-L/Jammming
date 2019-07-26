@@ -4,10 +4,10 @@ import {TrackList} from '../TrackList/TrackList';
 import './SearchResults.css';
 
 export class SearchResults extends React.Component {
-  constructor(props) {
+/*  constructor(props) {
     super(props);
   }
-
+*/
   render() {
     return (
       <div className="SearchResults">
