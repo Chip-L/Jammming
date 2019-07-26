@@ -29,6 +29,8 @@ export class App extends React.Component {
                        id: 2}],
 
     };
+
+    this.addTrack = this.addTrack.bind(this);
   }
 
   addTrack(track) {
@@ -47,7 +49,7 @@ export class App extends React.Component {
         <div className="App">
           <SearchBar /  >
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack.bind(this)} />
+            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack} />
             <Playlist playListName={this.state.playListName} playListTracks={this.state.playListTracks}/>
           </div>
         </div>

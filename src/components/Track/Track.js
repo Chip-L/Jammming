@@ -12,7 +12,9 @@ export class Track extends React.Component {
   }
 
   addTrack(e) {
-    this.props.onAdd(this.props.track);
+    let track = e.target.value;
+//    console.log('track: ' + this.props.trackInfo);
+    this.props.onAdd(this.props.trackInfo);
   }
 
   renderAction() {

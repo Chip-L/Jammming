@@ -4,18 +4,7 @@ import {Track} from '../Track/Track';
 import './TrackList.css';
 
 export class TrackList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.addTrack=this.addTrack.bind(this);
-  }
-
-  addTrack(e) {
-    this.props.onAdd(this.props.track);
-  }
-
   render() {
-
     let listOfTracks;
     if(this.props.tracklist) {
       listOfTracks = this.props.tracklist.map((track) => {
