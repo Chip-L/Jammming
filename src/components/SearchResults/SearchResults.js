@@ -4,10 +4,7 @@ import {TrackList} from '../TrackList/TrackList';
 import './SearchResults.css';
 
 export class SearchResults extends React.Component {
-/*  constructor(props) {
-    super(props);
-  }
-*/
+
   render() {
     return (
       <div className="SearchResults">
@@ -15,7 +12,7 @@ export class SearchResults extends React.Component {
         <TrackList
           tracklist={this.props.searchResults}
           onAdd={this.props.onAdd}
-          isRemoval="false"
+          isRemoval={false}
         />
       </div>
     );

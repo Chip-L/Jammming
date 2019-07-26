@@ -19,14 +19,14 @@ export class App extends React.Component {
                         artist: 'Madonna',
                         album: 'Like a Virgin',
                         id: 2}],
-      searchResults: [{name: 'Material Girl',
+      searchResults: [{name: 'Material Girl 3',
                        artist: 'Madonna',
                        album: 'Like a Virgin',
-                       id: 1},
-                      {name: 'Like a Virgin',
+                       id: 3},
+                      {name: 'Like a Virgin 4',
                        artist: 'Madonna',
                        album: 'Like a Virgin',
-                       id: 2}],
+                       id: 4}],
 
     };
 
@@ -35,11 +35,11 @@ export class App extends React.Component {
   }
 
   addTrack(track) {
-    let trackList = this.state.searchResults;
-    console.log(trackList);
+    let trackList = this.state.playListTracks;
+    
     if(!trackList.find((savedTrack) => savedTrack.id === track.id)) {
       trackList.push(track);
-      this.setState({searchResults: trackList});
+      this.setState({playlist: trackList});
     };
   }
 
