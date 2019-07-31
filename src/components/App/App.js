@@ -23,18 +23,7 @@ export class App extends React.Component {
                         id: 2,
                         uri: '123a2'
                       }],
-      searchResults: [{name: 'Material Girl 3',
-                       artist: 'Madonna',
-                       album: 'Like a Virgin',
-                       id: 3,
-                       uri: '123a3'
-                      },
-                      {name: 'Like a Virgin 4',
-                       artist: 'Madonna',
-                       album: 'Like a Virgin',
-                       id: 4,
-                       uri: '123a4'
-                     }],
+      searchResults: [],
 
     };
 
@@ -71,7 +60,6 @@ export class App extends React.Component {
   }
 
   search(term) {
-    console.log('Search term: ' + term);
     Spotify.search(term).then(results => {
       this.setState({searchResults: results});
     });

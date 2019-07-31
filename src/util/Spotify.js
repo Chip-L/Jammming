@@ -5,44 +5,33 @@ let accessToken;
 
 const Spotify = {
   getAccessToken() {
-    console.log('getAccessToken - accessToken='+accessToken);
-
     if (accessToken) {
       return accessToken;
     };
 
     //check local URL to see if we just requested the token
     let accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    console.log('1st accessTokenMatch = '+accessTokenMatch);
     let expiresInMatch =  window.location.href.match(/expires_in=([^&]*)/);
 
     //if the tokens DO NOT exist, then get them from spotify
     if (accessTokenMatch && expiresInMatch) {
-      console.log('token exists:'+accessTokenMatch[1]);
       accessToken = accessTokenMatch[1]; //set the access tokens
       let expiresIn = Number(expiresInMatch[1]); // cast the text as a Number
+
       window.setTimeout(() => {accessToken = ''}, expiresIn * 1000); //*1000 to remove milliseconds
       window.history.pushState('Access Token', null, '/');
 
       return accessToken;
     } else {
-      console.log('request token');
       const accessUrl = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&scope=playlist-modify-public&redirect_uri=${REDIRECT_URI}`;
       window.location = accessUrl;
-      console.log(window.location.href);
-/*
-      accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-      expiresInMatch =  window.location.href.match(/expires_in=([^&]*)/);
-
-      console.log('new accessTokenMatch = '+accessTokenMatch);*/
     }
 
   }, // .getAccessToken
 
   search(term) {
     const accessToken = this.getAccessToken(); // move this to local scope - fetches token
-    console.log('search accessToken='+accessToken);
-    const cleanTerm = term.replace(' ', '%20');
+    const cleanTerm = term.replace(' ', '%20'); // no spaces
 
     return fetch(`https://api.spotify.com/v1/search?q=${cleanTerm}&type=track`,
         { headers:
