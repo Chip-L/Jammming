@@ -11,18 +11,7 @@ export class App extends React.Component {
     super(props);
     this.state= {
       playListName: 'New Playlist',
-      playListTracks: [{name: 'Material Girl',
-                        artist: 'Madonna',
-                        album: 'Like a Virgin',
-                        id: 1,
-                        uri: '123a1'
-                       },
-                       {name: 'Like a Virgin',
-                        artist: 'Madonna',
-                        album: 'Like a Virgin',
-                        id: 2,
-                        uri: '123a2'
-                      }],
+      playListTracks: [],
       searchResults: [],
 
     };
@@ -59,7 +48,7 @@ export class App extends React.Component {
       console.log('update playlist name');
       return;
     }
-    
+
     let trackURIs = this.state.playListTracks.map(track => track.uri);
     Spotify.savePlaylist(this.state.playListName, trackURIs);
     this.setState({
