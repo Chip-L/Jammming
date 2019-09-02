@@ -92,9 +92,9 @@ const Spotify = {
           response => response.json()
         ).then(
           jsonResponse => {
-            const playlistId = jsonResponse.id;
+            const playlistID = jsonResponse.id;
             return fetch(
-              `https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`,
+              `https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`,
               {
                 headers: headers,
                 method: 'POST',
